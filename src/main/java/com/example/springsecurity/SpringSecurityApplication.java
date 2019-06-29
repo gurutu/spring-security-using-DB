@@ -31,20 +31,20 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// TODO Auto-generated method stub
-				//super.configure(auth);
-				
-				auth.inMemoryAuthentication()
-				     .withUser("pranav").password("{noop}test123").roles("ADMIN");
-				auth.inMemoryAuthentication()
-				     .withUser("pranav12").password("{noop}test1234").roles("EMPLOYEE");
-				
-//				UserBuilder user=User.withDefaultPasswordEncoder();
-//				auth.inMemoryAuthentication()
-//				.withUser(user.username("pranav").password("test123").roles("EMPLOYEE"))
-//				//auth.inMemoryAuthentication()
-//				.withUser(user.username("pranav12").password("test123").roles("MANAGER"))
-//				//auth.inMemoryAuthentication()
-//				.withUser(user.username("pranav123").password("test123").roles("ADMIN"));
+		//super.configure(auth);
+		
+		auth.inMemoryAuthentication()
+		     .withUser("pranav").password("{noop}test123").roles("ADMIN");
+		auth.inMemoryAuthentication()
+		     .withUser("pranav12").password("{noop}test1234").roles("EMPLOYEE");
+		
+//		UserBuilder user=User.withDefaultPasswordEncoder();
+//		auth.inMemoryAuthentication()
+//		.withUser(user.username("pranav").password("test123").roles("EMPLOYEE"))
+//		//auth.inMemoryAuthentication()
+//		.withUser(user.username("pranav12").password("test123").roles("MANAGER"))
+//		//auth.inMemoryAuthentication()
+//		.withUser(user.username("pranav123").password("test123").roles("ADMIN"));
 	}
 	
 	@Override
@@ -58,9 +58,7 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 			      .loginProcessingUrl("/authenticateTheUser")
 			      .permitAll()
 			  .and()
-			       .logout().permitAll()
-			  .and()
-			      .csrf().disable();
+			       .logout().permitAll();
 		    
 		
 		// TODO Auto-generated method stub
@@ -86,6 +84,7 @@ class DemoController{
 	}
 	
 }
+
 
 @Controller
 class WelComeController{
