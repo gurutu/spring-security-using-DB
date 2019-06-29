@@ -35,6 +35,8 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 		
 		auth.inMemoryAuthentication()
 		     .withUser("pranav").password("{noop}test123").roles("ADMIN");
+		auth.inMemoryAuthentication()
+		     .withUser("pranav12").password("{noop}test1234").roles("EMPLOYEE");
 		
 //		UserBuilder user=User.withDefaultPasswordEncoder();
 //		auth.inMemoryAuthentication()
