@@ -35,7 +35,7 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 		
 		auth.inMemoryAuthentication()
 		     .withUser("pranav").password("{noop}test123").roles("ADMIN");
-		
+		//This will also work but withDefaultPasswordEncoder has been dipricated 
 //		UserBuilder user=User.withDefaultPasswordEncoder();
 //		auth.inMemoryAuthentication()
 //		.withUser(user.username("pranav").password("test123").roles("EMPLOYEE"))
@@ -56,7 +56,9 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 			      .loginProcessingUrl("/authenticateTheUser")
 			      .permitAll()
 			  .and()
-			       .logout().permitAll();
+			       .logout().permitAll()
+			  .and()
+			      .csrf().disable();
 		    
 		
 		// TODO Auto-generated method stub
