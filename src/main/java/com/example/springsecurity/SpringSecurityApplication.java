@@ -58,7 +58,9 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 			      .loginProcessingUrl("/authenticateTheUser")
 			      .permitAll()
 			  .and()
-			       .logout().permitAll();
+			       .logout().permitAll()
+			  .and()
+			       .csrf().disable();
 		    
 		
 		// TODO Auto-generated method stub
