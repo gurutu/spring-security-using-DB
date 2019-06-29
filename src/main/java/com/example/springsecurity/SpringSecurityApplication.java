@@ -63,8 +63,6 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 			       .csrf().disable();
 		    //hello
 		
-		// TODO Auto-generated method stub
-		//super.configure(http);
 	}
 }
 
