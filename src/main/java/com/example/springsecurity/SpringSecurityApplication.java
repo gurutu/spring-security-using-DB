@@ -61,7 +61,7 @@ class DemoConfigration extends WebSecurityConfigurerAdapter {
 			       .logout().permitAll()
 			  .and()
 			       .csrf().disable();
-		    
+		    //hello
 		
 		// TODO Auto-generated method stub
 		//super.configure(http);
