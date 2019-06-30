@@ -48,6 +48,46 @@ Resources(URI)  ----
   
   On sunbsequent request ,web app will verify token before processing.
   
+  create table
+  
+  ===========================================================================
+ ```
+ CREATE TABLE users( username varchar(50) NOT NULL,
+ password varchar(50) NOT NULL, 
+enabled tinyint(1) NOT NULL, 
+PRIMARY KEY(username) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert into users values ('pranav','{noop}test123',1);
+ insert into users values ('raghu','{noop}test123',1); 
+insert into users values ('aditya','{noop}test123',1);
+
+
+CREATE TABLE authorities ( username varchar(50) NOT NULL, authority varchar(50) NOT NULL,
+
+UNIQUE KEY authoritiesidx1 (username,authority),
+
+CONSTRAINT authoritiesibfk1 FOREIGN KEY (username) REFERENCES users (username) ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+insert into authorities values ('pranav','ROLE_EMPLOYEE'), ('raghu','ROLE_EMPLOYEE'), ('raghu','ROLE_ADMIN'), ('aditya','ROLE_EMPLOYEE'), ('aditya','ROLE_ADMIN'), ('aditya','ROLE_MANAGER');
+
+```
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
